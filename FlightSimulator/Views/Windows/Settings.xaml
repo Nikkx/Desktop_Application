@@ -37,13 +37,13 @@
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Flight Server IP:" Padding="10" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Flight Info Port:" Padding="10" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             <TextBlock Grid.Row="2" Grid.Column="0" Text="Flight Command Port:" Padding="10" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="20,10" TextWrapping="Wrap" Padding="10" FontSize="14" FontFamily="Miriam Fixed" />
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="20,10" TextWrapping="Wrap" Padding="10" FontSize="14" FontFamily="Miriam Fixed" />
-            <TextBox Grid.Row="2" Grid.Column="1" Margin="20,10" TextWrapping="Wrap" Padding="10" FontSize="14" FontFamily="Miriam Fixed" />
+            <TextBox Text="{Binding FlightServerIP, UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="1" Margin="20,10" TextWrapping="Wrap" Padding="10" FontSize="14" FontFamily="Miriam Fixed" />
+            <TextBox Text="{Binding FlightInfoPort, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Grid.Column="1" Margin="20,10" TextWrapping="Wrap" Padding="10" FontSize="14" FontFamily="Miriam Fixed" />
+            <TextBox Text="{Binding FlightCommandPort, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1" Margin="20,10" TextWrapping="Wrap" Padding="10" FontSize="14" FontFamily="Miriam Fixed" />
         </Grid>
-        <Button x:Name="OkButton" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Content="OK" Margin="50">
+        <Button x:Name="OkButton" Command="{Binding Path=ClickCommand}"  Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Content="OK" Margin="50">
         </Button>
-        <Button x:Name="CancelButton" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Cancel" Margin="50">
+        <Button x:Name="CancelButton" Command="{Binding Path=CancelCommand}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Cancel" Margin="50">
         </Button>
     </Grid>
 </Window>

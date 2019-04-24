@@ -17,6 +17,6 @@
         </Grid.ColumnDefinitions>
         <local:FlightBoard Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" />
         <Button x:Name="ConnectButton" Content="Connect" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" />
-        <Button x:Name="SettingsButton" Content="Settings" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button x:Name="SettingsButton" Command="{Binding Path=OpenSettings}" Content="Settings" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </UserControl>
