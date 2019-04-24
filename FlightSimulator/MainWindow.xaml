@@ -4,9 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlightSimulator"
+        xmlns:view="clr-namespace:FlightSimulator.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="600" Width="1000"
+        ResizeMode="NoResize">
+    <Grid >
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="Padding" Value="5"/>
+                <Setter Property="Height" Value="40"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+                <Setter Property="FontSize" Value="18"/>
+            </Style>
+        </Grid.Resources>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <view:FullFlightBoard Grid.Column="0" Padding="5"/>
+        <view:FlightControls Grid.Column="1" Padding="5"/>
     </Grid>
 </Window>

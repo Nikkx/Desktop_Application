@@ -10,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FlightSimulator
+namespace FlightSimulator.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for FlightControls.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class FlightControls : UserControl
     {
-        public MainWindow()
+        public FlightControls()
         {
             InitializeComponent();
         }
-
     }
 }
