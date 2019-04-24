@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FlightSimulator.ViewModels;
+using FlightSimulator.Views.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,9 @@ namespace FlightSimulator.Views
         public FullFlightBoard()
         {
             InitializeComponent();
+            DataContext = new FlightBoardViewModel();
         }
+
     }
+
 }
