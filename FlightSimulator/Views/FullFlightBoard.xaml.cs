@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FlightSimulator.ViewModels;
+using FlightSimulator.Views.Windows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,25 @@ namespace FlightSimulator.Views
     /// </summary>
     public partial class FullFlightBoard : UserControl
     {
+        //private ICommand openWindow = new OpenSettingsCommand();
         public FullFlightBoard()
         {
             InitializeComponent();
+            DataContext = new FlightBoardViewModel();
         }
+
+        /*
+        public ICommand openSettings { get { return this.openWindow; } }
+
+        private class OpenSettingsCommand : ICommand
+        {
+            public event EventHandler CanExecuteChanged;
+            public bool CanExecute(object parameter) { return true; }
+            public void Execute(object parameter) {
+                var settingsWin = new Settings();
+                settingsWin.Show();
+            }
+        }*/
     }
+
 }
