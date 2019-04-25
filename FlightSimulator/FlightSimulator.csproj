@@ -86,10 +86,12 @@
     <Compile Include="Model\ApplicationSettingsModel.cs" />
     <Compile Include="Model\CommandHandler.cs" />
     <Compile Include="Model\EventArgs\VirtualJoystickEventArgs.cs" />
+    <Compile Include="Model\FlightBoardModel.cs" />
     <Compile Include="Model\Interface\ISettingsModel.cs" />
-    <Compile Include="Model\Tcp\ConnectEvent.cs" />
+    <Compile Include="Model\Tcp\ClientHandler.cs" />
+    <Compile Include="Model\Tcp\IClientHandler.cs" />
     <Compile Include="Model\Tcp\TcpServer.cs" />
-    <Compile Include="Model\Tcp\ClientTCP.cs" />
+    <Compile Include="Model\Tcp\TcpClient.cs" />
     <Compile Include="ViewModels\BaseNotify.cs" />
     <Compile Include="ViewModels\FlightBoardViewModel.cs" />
     <Compile Include="ViewModels\FlightControlsViewModel.cs" />

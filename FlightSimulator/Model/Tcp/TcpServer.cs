@@ -1,10 +1,12 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using FlightSimulator.Model;
+using FlightSimulator.ViewModels;
 
 
 class TcpServer
@@ -30,7 +32,7 @@ class TcpServer
         while (isRunning)
         {
             //we wait for client connection
-            TcpClient newClient = server.AcceptTcpClient();
+            System.Net.Sockets.TcpClient newClient = server.AcceptTcpClient();
 
             // once the client is found we create a thread to handle communication
             Thread newThread = new Thread(new ParameterizedThreadStart(HandleClient));
@@ -46,41 +48,37 @@ class TcpServer
     public void HandleClient(object obj)
     {
         // retrieve client from parameter passed to thread
-        TcpClient client = (TcpClient)obj;
-
-        // sets two streams one for reading (relevant) and one for writing (not relevant)
-        // StreamWriter sWriter = new StreamWriter(client.GetStream(), Encoding.ASCII);
-
+        System.Net.Sockets.TcpClient client = (System.Net.Sockets.TcpClient)obj;
 
         StreamReader sReader = new StreamReader(client.GetStream(), Encoding.ASCII);
 
         Boolean bClientConnected = true;
         String sData = null;
-
+        //once we have a server we decalre our singleton use of the FlightBoard (note: this WILL cause problems if we have more
+        //than one client thread)
+        FlightBoardViewModel declareFlightBoardViewModel= FlightBoardViewModel.Instance;
         while (bClientConnected)
         {
             // reads from stream
             sData = sReader.ReadLine();
-
+            //makes sure we have a string to work with
+            string oneLine = Convert.ToString(sData);
+            double temp_lon, temp_lat;
+            double[] numbers;
             //if we received any inputs from the simulator/client we implement them
             if (sData != null)
             {
-
-                //implement "input event" here
+                //we parse the input data into our Latitude and Longitude
+                numbers = oneLine.Split(',').Select(n => double.Parse(n)).ToArray();
+                temp_lon = numbers[0];
+                temp_lat = numbers[1];
+                //we set our current location to our (singleton) location
+                declareFlightBoardViewModel.Lon = temp_lon;
+                declareFlightBoardViewModel.Lat = temp_lat;
             }
 
             //after implementing the inputs we reset sReader to null
             sData = null;
-
-
-
-            //Note:again not relvant for Milestone3-for later use
-            // shows content on the console.
-            // Console.WriteLine("Client &gt; " + sData);
-
-            // to write something back.
-            // sWriter.WriteLine("This isnt relevant for Milestone3");
-            // sWriter.Flush();
         }
     }
 }
