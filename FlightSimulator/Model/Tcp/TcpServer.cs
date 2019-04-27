@@ -13,6 +13,7 @@ class TcpServer
 {
     private System.Net.Sockets.TcpListener server;
     private Boolean isRunning;
+    private FlightBoardModel flightBoardModel;
 
     public TcpServer()
     {
@@ -56,7 +57,7 @@ class TcpServer
         String sData = null;
         //once we have a server we decalre our singleton use of the FlightBoard (note: this WILL cause problems if we have more
         //than one client thread)
-        FlightBoardViewModel declareFlightBoardViewModel= FlightBoardViewModel.Instance;
+        FlightBoardModel declareFlightBoardModel= flightBoardModel.Instance;
         while (bClientConnected)
         {
             // reads from stream
@@ -73,8 +74,8 @@ class TcpServer
                 temp_lon = numbers[0];
                 temp_lat = numbers[1];
                 //we set our current location to our (singleton) location
-                declareFlightBoardViewModel.Lon = temp_lon;
-                declareFlightBoardViewModel.Lat = temp_lat;
+                declareFlightBoardModel.Lon = temp_lon;
+                declareFlightBoardModel.Lat = temp_lat;
             }
 
             //after implementing the inputs we reset sReader to null

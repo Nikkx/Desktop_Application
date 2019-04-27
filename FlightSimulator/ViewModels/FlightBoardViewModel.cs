@@ -13,20 +13,12 @@ namespace FlightSimulator.ViewModels
     public class FlightBoardViewModel : BaseNotify
     {
 
-        #region Singleton
-        private static FlightBoardViewModel m_Instance = null;
-        public static FlightBoardViewModel Instance
+        private FlightBoardModel model;
+
+        public FlightBoardViewModel(FlightBoardModel model)
         {
-            get
-            {
-                if (m_Instance == null)
-                {
-                    m_Instance = new FlightBoardViewModel();
-                }
-                return m_Instance;
-            }
+            this.model = model;
         }
-        #endregion
 
         private double lon;
         public double Lon
@@ -49,21 +41,38 @@ namespace FlightSimulator.ViewModels
                 NotifyPropertyChanged("Lat");
             }
         }
+
         #region Commands
 
         private ICommand _openSettings;
-        public ICommand OpenSettings {
-            get {
-                return _openSettings ?? (_openSettings=new CommandHandler(() => OnClick()));
+        public ICommand OpenSettings
+        {
+            get
+            {
+                return _openSettings ?? (_openSettings = new CommandHandler(() => OnSettingsClick()));
             }
         }
 
-        private void OnClick()
+        private void OnSettingsClick()
         {
             var settingsWin = new Settings();
             settingsWin.Show();
         }
 
+
+        private ICommand _connect;
+        public ICommand Connect
+        {
+            get
+            {
+                return _connect ?? (_connect = new CommandHandler(() => OnConnectClick()));
+            }
+        }
+
+        private void OnConnectClick()
+        {
+            model.connect();
+        }
         #endregion Commands
     }
 }
