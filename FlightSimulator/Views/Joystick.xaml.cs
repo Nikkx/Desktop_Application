@@ -141,6 +141,7 @@ namespace FlightSimulator.Views
             ///!!!!!!!!!!!!!!!!!
             /// YOU MUST CHANGE THE FUNCTION!!!!
             ///!!!!!!!!!!!!!!
+            ///trigger function in vm that will pass values to client?
             if (!Knob.IsMouseCaptured) return;
 
             Point newPos = e.GetPosition(Base);

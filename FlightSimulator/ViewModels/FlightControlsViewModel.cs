@@ -15,7 +15,7 @@ namespace FlightSimulator.ViewModels
     class FlightControlsViewModel : BaseNotify
     {
         //private JoystickViewModel joystickVM;
-        //private TCPClient client;
+        private FlightControlModel model;
         #region AutoPilotProperties
 
         private string color;
@@ -118,7 +118,7 @@ namespace FlightSimulator.ViewModels
         private void OnClick()
         {
             //pass text to client
-
+            model.autoPilot(Text);
             //clear the window
             OnClear();
         }
