@@ -1,4 +1,5 @@
 ﻿using FlightSimulator.Model;
+using FlightSimulator.Model.EventArgs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,9 @@ namespace FlightSimulator.ViewModels
     class FlightControlsViewModel : BaseNotify
     {
         //private JoystickViewModel joystickVM;
+        //private TCPClient client;
+        #region AutoPilotProperties
+
         private string color;
         public string Color
         {
@@ -39,6 +43,67 @@ namespace FlightSimulator.ViewModels
                 NotifyPropertyChanged("Color");
             }
         }
+
+        #endregion AutoPilotProperties
+
+        #region ManualProperties
+
+        private double aileron;
+        public double Aileron//this works. the property changes when joystick moves.
+        {
+            get
+            {
+                return aileron;
+            }
+            set
+            {
+                aileron = value;
+                NotifyPropertyChanged("Aileron");
+            }
+        }
+
+        private double elevator;
+        public double Elevator
+        {
+            get
+            {
+                return elevator;
+            }
+            set
+            {
+                elevator = value;
+                NotifyPropertyChanged("Elevator");
+            }
+        }
+
+        private double throttle;
+        public double Throttle
+        {
+            get
+            {
+                return throttle;
+            }
+            set
+            {
+                throttle = value;
+                NotifyPropertyChanged("Throttle");
+            }
+        }
+        private double rudder;
+        public double Rudder
+        {
+            get
+            {
+                return rudder;
+            }
+            set
+            {
+                rudder = value;
+                NotifyPropertyChanged("Rudder");
+            }
+        }
+
+        #endregion ManualProperties
 
         #region Commands
 

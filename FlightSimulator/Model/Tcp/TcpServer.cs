@@ -13,7 +13,9 @@ class TcpServer
 {
     private System.Net.Sockets.TcpListener server;
     private Boolean isRunning;
-    private FlightBoardModel flightBoardModel;
+    private FlightBoardModel flightBoardModel;//not needed
+    
+    //make singelton
 
     public TcpServer()
     {
