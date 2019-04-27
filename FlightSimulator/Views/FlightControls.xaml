@@ -36,9 +36,9 @@
                             <RotateTransform Angle="90"/>
                         </Slider.LayoutTransform>
                     </Slider>
-                    <local:Joystick HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
+                    <local:Joystick x:Name="joystick" Aileron="{Binding Aileron,Mode=OneWayToSource}" Elevator="{Binding Elevator,Mode=OneWayToSource}" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="2"/>
                     <TextBlock VerticalAlignment="Top" Text="aileron" TextAlignment="Center" Grid.Row="0" Grid.Column="2"/>
-                    <TextBlock x:Name="aileronVal" Text="{Binding Aileron,UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    <TextBlock x:Name="aileronVal" Text="{Binding ElementName=joystick,Path=Aileron,StringFormat=0.0#}" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Center" />
                     <TextBlock VerticalAlignment="Bottom" Text="rudder" TextAlignment="Center" Grid.Row="3" Grid.Column="2"/>
                     <TextBlock x:Name="rudderVal" Text="{Binding ElementName=rudderSlider,Path=Value}" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
                     <Slider x:Name="rudderSlider" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="200"
@@ -49,7 +49,7 @@
                             <RotateTransform Angle="90"/>
                         </TextBlock.LayoutTransform>
                     </TextBlock>
-                    <TextBlock x:Name="elevatorVal" Text="0" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <TextBlock x:Name="elevatorVal" Text="{Binding ElementName=joystick,Path=Elevator,StringFormat=0.0#}" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top">
                         <TextBlock.LayoutTransform>
                             <RotateTransform Angle="90"/>
                         </TextBlock.LayoutTransform>
