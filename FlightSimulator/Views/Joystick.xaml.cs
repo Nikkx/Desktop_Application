@@ -1,4 +1,5 @@
 ﻿using FlightSimulator.Model.EventArgs;
+using FlightSimulator.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,9 +40,9 @@ namespace FlightSimulator.Views
             DependencyProperty.Register("ElevatorStep", typeof(double), typeof(Joystick), new PropertyMetadata(1.0));
 
         /* Unstable - needs work */
-        ///// <summary>Indicates whether the joystick knob resets its place after being released</summary>
+        /// <summary>Indicates whether the joystick knob resets its place after being released</summary>
         //public static readonly DependencyProperty ResetKnobAfterReleaseProperty =
-        //    DependencyProperty.Register(nameof(ResetKnobAfterRelease), typeof(bool), typeof(VirtualJoystick), new PropertyMetadata(true));
+           //DependencyProperty.Register(nameof(ResetKnobAfterRelease), typeof(bool), typeof(Joystick), new PropertyMetadata(true));
 
         /// <summary>Current Aileron in degrees from 0 to 360</summary>
         public double Aileron
@@ -80,11 +81,12 @@ namespace FlightSimulator.Views
         }
 
         /// <summary>Indicates whether the joystick knob resets its place after being released</summary>
-        //public bool ResetKnobAfterRelease
-        //{
-        //    get { return Convert.ToBoolean(GetValue(ResetKnobAfterReleaseProperty)); }
-        //    set { SetValue(ResetKnobAfterReleaseProperty, value); }
-        //}
+       /* public bool ResetKnobAfterRelease
+        {
+           get { return Convert.ToBoolean(GetValue(ResetKnobAfterReleaseProperty)); }
+            set { SetValue(ResetKnobAfterReleaseProperty, value); }
+        }*/
+
 
         /// <summary>Delegate holding data for joystick state change</summary>
         /// <param name="sender">The object that fired the event</param>
@@ -118,6 +120,8 @@ namespace FlightSimulator.Views
             Knob.MouseMove += Knob_MouseMove;
 
             centerKnob = Knob.Resources["CenterKnob"] as Storyboard;
+
+            //DataContext = new JoystickViewModel();//todo is it needed?
         }
 
         private void Knob_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

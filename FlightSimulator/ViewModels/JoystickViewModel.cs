@@ -8,10 +8,55 @@ namespace FlightSimulator.ViewModels
 {
     class JoystickViewModel : BaseNotify
     {
-        public double Throttle { get; set; }
-        public double Rudder { get; set; }
-        public double Aileron { get; set; }
-        public double Elevator { get; set; }
+        private double throttle;
+        public double Throttle {
+            get {
+                return throttle;
+            }
+            set {
+                throttle = value;
+                NotifyPropertyChanged("Throttle");
+            }
+        }
+        private double rudder;
+        public double Rudder
+        {
+            get
+            {
+                return rudder;
+            }
+            set
+            {
+                rudder = value;
+                NotifyPropertyChanged("Rudder");
+            }
+        }
+        private double aileron;
+        public double Aileron
+        {
+            get
+            {
+                return aileron;
+            }
+            set
+            {
+                aileron = value;
+                NotifyPropertyChanged("Aileron");
+            }
+        }
+        private double elevator;
+        public double Elevator
+        {
+            get
+            {
+                return elevator;
+            }
+            set
+            {
+                elevator = value;
+                NotifyPropertyChanged("Elevator");
+            }
+        }
 
     }
 }

@@ -6,16 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 
 namespace FlightSimulator.ViewModels
 {
     class FlightControlsViewModel : BaseNotify
     {
+        //private JoystickViewModel joystickVM;
         private string color;
         public string Color
         {
-            set { }
             get
             {
                 if (text == null || text == "")
@@ -24,22 +25,20 @@ namespace FlightSimulator.ViewModels
                     color = "rosyBrown";
                 return color;
             }
+            set { }
         }
 
-        TextBox textBox = new TextBox();
         private string text;
         public string Text
         {
             get { return text; }
             set
-            { 
+            {
                 text = value;
+                NotifyPropertyChanged("Text");
                 NotifyPropertyChanged("Color");
-                NotifyPropertyChanged("TextBox");
             }
         }
-
-        //public static readonly DependencyProperty MyPropertyProperty = DependencyProperty.Register("MyProperty", typeof(string), typeof(FlightControlsViewModel), new PropertyMetadata(0));
 
         #region Commands
 
@@ -53,7 +52,7 @@ namespace FlightSimulator.ViewModels
         }
         private void OnClick()
         {
-            //todo: pass text to server/client/whatever
+            //pass text to client
 
             //clear the window
             OnClear();
@@ -69,9 +68,7 @@ namespace FlightSimulator.ViewModels
         }
         private void OnClear()
         {
-            Text = "";//todo: doesn't erase text WHYYYY change in code doesn't change GUI
-            text = "";
-            textBox.Text = "";
+            Text = string.Empty;
         }
 
         #endregion Commands
