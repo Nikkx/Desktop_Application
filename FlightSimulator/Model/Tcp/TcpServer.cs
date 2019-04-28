@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 using FlightSimulator.Model;
 
 
@@ -13,7 +14,6 @@ public class TCPServer
     private System.Net.Sockets.TcpListener server;
     private Boolean isRunning;
     
-    //make singelton??
 
     public TCPServer()
     {
@@ -24,23 +24,26 @@ public class TCPServer
         server.Start();
 
         isRunning = true;
-
         LoopClients();
     }
 
     public void LoopClients()
     {
+
+        new Task(() =>
+        {
         while (isRunning)
         {
+
             //we wait for client connection
             System.Net.Sockets.TcpClient newClient = server.AcceptTcpClient();
-
             // once the client is found we create a thread to handle communication
             Thread newThread = new Thread(new ParameterizedThreadStart(HandleClient));
             newThread.Start(newClient);
-        }
-    }
 
+        }
+        });
+     }
     public double Lon { get; set; }
     public double Lat { get; set; }
 
