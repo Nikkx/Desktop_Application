@@ -11,6 +11,26 @@ using FlightSimulator.Model;
 
 public class TCPServer
 {
+    #region Singleton
+    private static TCPServer singleInstance=null;
+    public static TCPServer Instance
+     {
+        get
+         {
+            if(singleInstance ==null)
+            {
+                singleInstance=new TCPServer();
+            }
+            return singleInstance;
+        }
+
+     }
+
+    #endregion
+
+
+
+
     private System.Net.Sockets.TcpListener server;
     private Boolean isRunning;
     
@@ -44,6 +64,8 @@ public class TCPServer
         }
         });
      }
+    //Keep the current PLane location-this will always be updated to the PLane's
+    //current location
     public double Lon { get; set; }
     public double Lat { get; set; }
 
