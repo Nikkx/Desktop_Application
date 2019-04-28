@@ -16,6 +16,12 @@ namespace FlightSimulator.ViewModels
     {
         //private JoystickViewModel joystickVM;
         private FlightControlModel model;
+
+        public FlightControlsViewModel(FlightControlModel model)
+        {
+            this.model = model;
+        }
+
         #region AutoPilotProperties
 
         private string color;

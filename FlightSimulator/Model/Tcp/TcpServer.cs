@@ -8,7 +8,7 @@ using System.Threading;
 using FlightSimulator.Model;
 
 
-class TCPServer
+public class TCPServer
 {
     private System.Net.Sockets.TcpListener server;
     private Boolean isRunning;
@@ -41,6 +41,8 @@ class TCPServer
         }
     }
 
+    public double Lon { get; set; }
+    public double Lat { get; set; }
 
     /*
      * Note to future self: contains code for writing back to the client, this isn't relevant
@@ -57,7 +59,7 @@ class TCPServer
         String sData = null;
         //once we have a server we declare our singleton use of the FlightBoard (note: this WILL cause problems if we have more
         //than one client thread)
-        FlightBoardModel
+        
         while (bClientConnected)
         {
             // reads from stream
@@ -74,8 +76,8 @@ class TCPServer
                 temp_lon = numbers[0];
                 temp_lat = numbers[1];
                 //we set our current location to our (singleton) location
-                declareFlightBoardModel.Lon = temp_lon;
-                declareFlightBoardModel.Lat = temp_lat;
+                Lon = temp_lon;
+                Lat = temp_lat;
             }
 
             //after implementing the inputs we reset sReader to null

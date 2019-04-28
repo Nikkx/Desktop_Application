@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FlightSimulator.Model;
 
+
 namespace FlightSimulator.ViewModels
 {
     public class FlightBoardModel : BaseNotify
@@ -24,6 +25,7 @@ namespace FlightSimulator.ViewModels
             }
         }
         #endregion
+        
 
         private double lon;
         public double Lon
@@ -31,7 +33,7 @@ namespace FlightSimulator.ViewModels
             get { return lon; }
             set
             {
-                lon = value;
+                lon = server.Lon;
                 NotifyPropertyChanged("Lon");
             }
         }
@@ -42,7 +44,7 @@ namespace FlightSimulator.ViewModels
             get { return lat; }
             set
             {
-                lat = value;
+                lat = server.Lat;
                 NotifyPropertyChanged("Lat");
             }
         }

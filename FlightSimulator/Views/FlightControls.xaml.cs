@@ -24,7 +24,7 @@ namespace FlightSimulator.Views
         public FlightControls()
         {
             InitializeComponent();
-            DataContext = new FlightControlsViewModel();
+            DataContext = new FlightControlsViewModel(new Model.FlightControlModel());
         }
     }
 }
