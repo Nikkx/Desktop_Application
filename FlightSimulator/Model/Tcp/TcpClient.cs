@@ -47,7 +47,6 @@ namespace FlightSimulator.Model
 
         public void Write(string command)
         {
-            System.Diagnostics.Debug.WriteLine("Connecting");
            // using (StreamWriter writer = new StreamWriter(stream))
                 //writer.Write(command);
                 //writer.Flush();
