@@ -25,7 +25,6 @@ public class TCPServer
         }
 
      }
-
     #endregion
 
 
@@ -42,7 +41,6 @@ public class TCPServer
         int port = System.Convert.ToInt32(currentSettings.FlightInfoPort);
         server = new System.Net.Sockets.TcpListener(currentIP, port);
         server.Start();
-
         isRunning = true;
         LoopClients();
     }
