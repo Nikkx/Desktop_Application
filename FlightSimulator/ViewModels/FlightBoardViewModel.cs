@@ -42,37 +42,5 @@ namespace FlightSimulator.ViewModels
             }
         }
 
-        #region Commands
-
-        private ICommand _openSettings;
-        public ICommand OpenSettings
-        {
-            get
-            {
-                return _openSettings ?? (_openSettings = new CommandHandler(() => OnSettingsClick()));
-            }
-        }
-
-        private void OnSettingsClick()
-        {
-            var settingsWin = new Settings();
-            settingsWin.Show();
-        }
-
-
-        private ICommand _connect;
-        public ICommand Connect
-        {
-            get
-            {
-                return _connect ?? (_connect = new CommandHandler(() => OnConnectClick()));
-            }
-        }
-
-        private void OnConnectClick()
-        {
-            model.Connect();
-        }
-        #endregion Commands
     }
 }

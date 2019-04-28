@@ -29,6 +29,7 @@ namespace FlightSimulator.Views
         public FlightBoard()
         {
             InitializeComponent();
+            DataContext = new FlightBoardViewModel(new FlightBoardModel());
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
