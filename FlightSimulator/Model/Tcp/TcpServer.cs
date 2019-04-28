@@ -8,14 +8,14 @@ using System.Threading;
 using FlightSimulator.Model;
 
 
-class TcpServer
+class TCPServer
 {
     private System.Net.Sockets.TcpListener server;
     private Boolean isRunning;
     
-    //make singelton
+    //make singelton??
 
-    public TcpServer()
+    public TCPServer()
     {
         ApplicationSettingsModel currentSettings = new ApplicationSettingsModel();
         IPAddress currentIP = IPAddress.Parse(currentSettings.FlightServerIP);
@@ -55,9 +55,9 @@ class TcpServer
 
         Boolean bClientConnected = true;
         String sData = null;
-        //once we have a server we decalre our singleton use of the FlightBoard (note: this WILL cause problems if we have more
+        //once we have a server we declare our singleton use of the FlightBoard (note: this WILL cause problems if we have more
         //than one client thread)
-        FlightBoardModel declareFlightBoardModel= flightBoardModel.Instance;
+        FlightBoardModel declareFlightBoardModel= FlightBoardModel.Instance;
         while (bClientConnected)
         {
             // reads from stream
@@ -82,4 +82,9 @@ class TcpServer
             sData = null;
         }
     }
+
+            public void Stop()
+        {
+            server.Stop();
+        }
 }

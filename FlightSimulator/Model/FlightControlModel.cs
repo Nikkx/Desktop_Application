@@ -10,13 +10,20 @@ namespace FlightSimulator.Model
     {
         
         /// <summary>
-        /// gets text and passes it as commands to flight simulator
+        /// gets line of text and passes it as commands to flight simulator
         /// </summary>
         /// <param name="text"></param>
         public void autoPilot(string text)
         {
-            //fill here
+         TCPClient client = TCPClient.Instance;
+                client.Write(text);
         }
+
+        public void manualPilot(){
+
+           }
+
+
 
     }
 }

@@ -71,7 +71,7 @@ namespace FlightSimulator.ViewModels
 
         private void OnConnectClick()
         {
-            model.connect();
+            model.Connect();
         }
         #endregion Commands
     }
