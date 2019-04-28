@@ -54,58 +54,36 @@ namespace FlightSimulator.ViewModels
 
         #region ManualProperties
 
-        private double aileron;
         public double Aileron//this works. the property changes when joystick moves.
         {
-            get
-            {
-                return aileron;
-            }
             set
-            {
-                aileron = value;
-                NotifyPropertyChanged("Aileron");
+            { 
+                
+                model.Send("set /controls/flight/aileron " + Convert.ToString(value));
             }
         }
 
-        private double elevator;
         public double Elevator
         {
-            get
-            {
-                return elevator;
-            }
             set
             {
-                elevator = value;
-                NotifyPropertyChanged("Elevator");
+                model.Send("set /controls/flight/elevator " + Convert.ToString(value));
             }
         }
 
-        private double throttle;
         public double Throttle
         {
-            get
-            {
-                return throttle;
-            }
             set
             {
-                throttle = value;
-                NotifyPropertyChanged("Throttle");
+                model.Send("set /controls/engines/current-engine/throttle " + Convert.ToString(value));
             }
         }
-        private double rudder;
+
         public double Rudder
         {
-            get
-            {
-                return rudder;
-            }
             set
             {
-                rudder = value;
-                NotifyPropertyChanged("Rudder");
+                model.Send("set /controls/flight/rudder " + Convert.ToString(value));
             }
         }
 

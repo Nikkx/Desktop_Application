@@ -25,7 +25,7 @@ namespace FlightSimulator.Model
             }
         }
         #endregion
-        TcpClient client;
+        public TcpClient client;
         private ApplicationSettingsModel app;
         private IPEndPoint ep;
 

@@ -25,15 +25,15 @@ namespace FlightSimulator.ViewModels
             }
         }
         #endregion
-        
 
+        //private TCPServer server;
         private double lon;
         public double Lon
         {
             get { return lon; }
             set
             {
-                lon = server.Lon;
+                lon = TCPServer.Instance.Lon;
                 NotifyPropertyChanged("Lon");
             }
         }
@@ -44,42 +44,13 @@ namespace FlightSimulator.ViewModels
             get { return lat; }
             set
             {
-                lat = server.Lat;
+                lat = TCPServer.Instance.Lat;
                 NotifyPropertyChanged("Lat");
             }
         }
 
 
 
-        //this is used to determine if we are already connected or not
-        static private bool is_connect = false;
-        static public bool Is_connect
-        {
-            get { return is_connect; }
-            set
-            {
-                is_connect = value;
-            }
-        }
-
-        /*
-         * This will create the new "Client" and "Server" threads
-         */
-         private TCPServer server;
-         public void Connect(){
-            is_connect = true;
-            TCPClient client = new TCPClient();
-            server = new TCPServer();
-            System.Diagnostics.Debug.WriteLine("Connected!");
-
-        }
-
-         private void DisConnect()
-        {
-            TCPClient client = new TCPClient();
-            client.Close();
-            server.Stop();
-            is_connect = false;
-        }
+        
     }
 }

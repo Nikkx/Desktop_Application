@@ -26,7 +26,7 @@ namespace FlightSimulator.Views
         public FullFlightBoard()
         {
             InitializeComponent();
-            DataContext = new FlightBoardViewModel(new FlightBoardModel());
+            DataContext = new FullFlightBoardViewModel(new FullFlightBoardModel());
         }
 
     }

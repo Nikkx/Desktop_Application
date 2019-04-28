@@ -148,17 +148,15 @@ namespace FlightSimulator.Views
             double distance = Math.Round(Math.Sqrt(deltaPos.X * deltaPos.X + deltaPos.Y * deltaPos.Y));
             if (distance >= canvasWidth / 2 || distance >= canvasHeight / 2)
                 return;
-            Aileron = -deltaPos.Y;
-            Elevator = deltaPos.X;
+            Aileron = Math.Round(deltaPos.X/124,1);
+            Elevator = Math.Round(-deltaPos.Y / 124, 1);
 
             knobPosition.X = deltaPos.X;
             knobPosition.Y = deltaPos.Y;
 
             if (Moved == null ||
                 (!(Math.Abs(_prevAileron - Aileron) > AileronStep) && !(Math.Abs(_prevElevator - Elevator) > ElevatorStep)))
-            {
-                Aileron /= 124;
-                Elevator /= 124;
+            { 
                 return;
             }
 

@@ -12,19 +12,19 @@ using FlightSimulator.Model;
 public class TCPServer
 {
     #region Singleton
-    private static TCPServer singleInstance=null;
+    private static TCPServer singleInstance = null;
     public static TCPServer Instance
-     {
+    {
         get
-         {
-            if(singleInstance ==null)
+        {
+            if (singleInstance == null)
             {
-                singleInstance=new TCPServer();
+                singleInstance = new TCPServer();
             }
             return singleInstance;
         }
 
-     }
+    }
     #endregion
 
 
@@ -32,7 +32,7 @@ public class TCPServer
 
     private System.Net.Sockets.TcpListener server;
     private Boolean isRunning;
-    
+
 
     public TCPServer()
     {
@@ -50,18 +50,18 @@ public class TCPServer
 
         new Task(() =>
         {
-        while (isRunning)
-        {
+            while (isRunning)
+            {
 
-            //we wait for client connection
-            System.Net.Sockets.TcpClient newClient = server.AcceptTcpClient();
-            // once the client is found we create a thread to handle communication
-            Thread newThread = new Thread(new ParameterizedThreadStart(HandleClient));
-            newThread.Start(newClient);
+                //we wait for client connection
+                System.Net.Sockets.TcpClient newClient = server.AcceptTcpClient();
+                // once the client is found we create a thread to handle communication
+                Thread newThread = new Thread(new ParameterizedThreadStart(HandleClient));
+                newThread.Start(newClient);
 
-        }
+            }
         });
-     }
+    }
     //Keep the current PLane location-this will always be updated to the PLane's
     //current location
     public double Lon { get; set; }
@@ -82,7 +82,7 @@ public class TCPServer
         String sData = null;
         //once we have a server we declare our singleton use of the FlightBoard (note: this WILL cause problems if we have more
         //than one client thread)
-        
+
         while (bClientConnected)
         {
             // reads from stream
@@ -108,8 +108,8 @@ public class TCPServer
         }
     }
 
-            public void Stop()
-        {
-            server.Stop();
-        }
+    public void Stop()
+    {
+        server.Stop();
+    }
 }
