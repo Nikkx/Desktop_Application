@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using FlightSimulator.Model;
 
 namespace FlightSimulator.Model
@@ -11,13 +12,17 @@ namespace FlightSimulator.Model
     {
         
         /// <summary>
-        /// gets line of text and passes it as commands to flight simulator
+        /// gets text and passes it as commands to flight simulator
         /// </summary>
         /// <param name="text"></param>
         public void autoPilot(string text)
         {
-         TCPClient client = TCPClient.Instance;
-                client.Write(text);
+            //parse line by line
+            //string[] lines = text.Split(Environment.NewLine);
+
+
+            TCPClient client = TCPClient.Instance;
+            client.Write(text);
         }
 
 
