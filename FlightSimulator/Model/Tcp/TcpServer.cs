@@ -6,14 +6,12 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using FlightSimulator.Model;
-using FlightSimulator.ViewModels;
 
 
 class TcpServer
 {
     private System.Net.Sockets.TcpListener server;
     private Boolean isRunning;
-    private FlightBoardModel flightBoardModel;//not needed
     
     //make singelton
 

@@ -1,27 +1,23 @@
-﻿using System;
+﻿using FlightSimulator.Model.Interface;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
-namespace FlightSimulator.Model
+namespace FlightSimulator.ViewModels
 {
-
-    public class FlightBoardModel
+    public class FlightBoardViewModel : BaseNotify
     {
-
         #region Singleton
-        private FlightBoardModel m_Instance = null;
-        //private FlightBoardModel() { }
-        public FlightBoardModel Instance
+        private static FlightBoardViewModel oneInstance = null;
+        public static FlightBoardViewModel Instance
         {
             get
             {
-                if (m_Instance == null)
+                if (oneInstance == null)
                 {
-                    m_Instance = new FlightBoardModel();
+                    oneInstance = new FlightBoardViewModel();
                 }
                 return m_Instance;
             }
@@ -31,44 +27,23 @@ namespace FlightSimulator.Model
         private double lon;
         public double Lon
         {
-            get
-            {
-                return lon;
-            }
+            get { return lon; }
             set
             {
-                //get the value from flight simulator - first value that comes from server??
-                
+                lon = value;
+                NotifyPropertyChanged("Lon");
             }
         }
 
         private double lat;
         public double Lat
         {
-            get
-            {
-                return lat;
-            }
+            get { return lat; }
             set
             {
-                
+                lat = value;
+                NotifyPropertyChanged("Lat");
             }
-        }
-
-        //this function connects to the server and client.
-        public void connect()
-        {
-            TcpServer myServer = new TcpServer();
-            TcpClient myClient = new TcpClient();
-        }
-
-        public void updateMapLocation(string input)
-        {
-            /*
-             * Insert parsing code for Latitude/Longitude
-             */
-             //need to add:
-            //Vm_PropertyChanged(newLocation, info);
         }
     }
 }
