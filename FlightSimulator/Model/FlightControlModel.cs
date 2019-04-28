@@ -20,8 +20,10 @@ namespace FlightSimulator.Model
             //splits the text into strings for each individual line
             string[] lines = text.Split("\n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
             foreach (string line in lines){
-            TCPClient client = TCPClient.Instance;
+            /*TCPClient client = TCPClient.Instance;
             client.Write(line);
+                }*/
+                TCPClient.Instance.Write(line);
                 }
         }
 
