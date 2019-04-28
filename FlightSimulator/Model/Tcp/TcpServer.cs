@@ -57,7 +57,7 @@ class TCPServer
         String sData = null;
         //once we have a server we declare our singleton use of the FlightBoard (note: this WILL cause problems if we have more
         //than one client thread)
-        FlightBoardModel declareFlightBoardModel= FlightBoardModel.Instance;
+        FlightBoardModel
         while (bClientConnected)
         {
             // reads from stream

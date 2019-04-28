@@ -62,7 +62,7 @@ namespace FlightSimulator.ViewModels
          * This will create the new "Client" and "Server" threads
          */
          private TCPServer server;
-         void Connect(){
+         public void Connect(){
             is_connect = true;
             server = new TCPServer();
             TCPClient client = new TCPClient();
