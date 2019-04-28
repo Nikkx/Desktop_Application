@@ -33,7 +33,7 @@ namespace FlightSimulator.ViewModels
             get { return lon; }
             set
             {
-                lon = TCPServer.Instance.Lon;
+                lon = value;
                 NotifyPropertyChanged("Lon");
             }
         }
@@ -44,12 +44,12 @@ namespace FlightSimulator.ViewModels
             get { return lat; }
             set
             {
-                lat = TCPServer.Instance.Lat;
+                lat = value;//until here all good
                 NotifyPropertyChanged("Lat");
             }
         }
 
-
+        //make de3legade and event, invoke event in set,VM subscribed to event
 
         
     }

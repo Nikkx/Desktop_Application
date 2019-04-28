@@ -58,6 +58,7 @@ namespace FlightSimulator.ViewModels
         {
             set
             { 
+                if(TCPClient.Instance.client.Connected)
                 model.Send("set /controls/flight/aileron " + Convert.ToString(value));
             }
         }
@@ -66,6 +67,7 @@ namespace FlightSimulator.ViewModels
         {
             set
             {
+                if(TCPClient.Instance.client.Connected)
                 model.Send("set /controls/flight/elevator " + Convert.ToString(value));
             }
         }
@@ -74,6 +76,7 @@ namespace FlightSimulator.ViewModels
         {
             set
             {
+                if(TCPClient.Instance.client.Connected)
                 model.Send("set /controls/engines/current-engine/throttle " + Convert.ToString(value));
             }
         }
@@ -82,6 +85,7 @@ namespace FlightSimulator.ViewModels
         {
             set
             {
+                if(TCPClient.Instance.client.Connected)
                 model.Send("set /controls/flight/rudder " + Convert.ToString(value));
             }
         }

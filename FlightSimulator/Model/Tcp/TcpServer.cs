@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using FlightSimulator.Model;
+using FlightSimulator.ViewModels;
 
 
 public class TCPServer
@@ -60,7 +61,7 @@ public class TCPServer
                 newThread.Start(newClient);
 
             }
-        });
+        }).Start();
     }
     //Keep the current PLane location-this will always be updated to the PLane's
     //current location
@@ -99,8 +100,8 @@ public class TCPServer
                 temp_lon = numbers[0];
                 temp_lat = numbers[1];
                 //we set our current location to our (singleton) location
-                Lon = temp_lon;
-                Lat = temp_lat;
+               FlightBoardModel.Instance.Lon = temp_lon;
+                FlightBoardModel.Instance.Lat = temp_lat;
             }
 
             //after implementing the inputs we reset sReader to null
