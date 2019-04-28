@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FlightSimulator.Model;
 
 namespace FlightSimulator.Model
 {
@@ -19,16 +20,13 @@ namespace FlightSimulator.Model
                 client.Write(text);
         }
 
+
         private double rudder = 0;
         public double Rudder
         {
             set
             {
                 rudder = value;
-                if (!FlightBoardModel.Is_connect)
-                {
-                    return;
-                }
                 TCPClient client = TCPClient.Instance;
                 string command = "set controls/flight/rudder " + rudder + "\r\n";
                 client.Write(command);
@@ -43,10 +41,6 @@ namespace FlightSimulator.Model
             set
             {
                 throttle = value;
-                if (!FlightBoardModel.Is_connect)
-                {
-                    return;
-                }
                 TCPClient client = TCPClient.Instance;
                 string command = "set controls/engines/current-engine/throttle " + rudder + "\r\n";
                 client.Write(command);
@@ -65,10 +59,6 @@ namespace FlightSimulator.Model
             set
             {
                 aileron = value;
-                if (!FlightBoardModel.Is_connect)
-                {
-                    return;
-                }
                 TCPClient client = TCPClient.Instance;
                 string command = "set controls/flight/aileron " + rudder + "\r\n";
                 client.Write(command);
@@ -86,10 +76,6 @@ namespace FlightSimulator.Model
             set
             {
                 elevator = value;
-                if (!FlightBoardModel.Is_connect)
-                {
-                    return;
-                }
                 TCPClient client = TCPClient.Instance;
                 string command = "set controls/flight/elevator " + rudder + "\r\n";
                 client.Write(command);
