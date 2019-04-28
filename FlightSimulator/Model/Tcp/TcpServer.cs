@@ -24,7 +24,7 @@ public class TCPServer
         server.Start();
 
         isRunning = true;
-
+        
         LoopClients();
     }
 
@@ -32,12 +32,21 @@ public class TCPServer
     {
         while (isRunning)
         {
+            Console.WriteLine("HELLO");
             //we wait for client connection
-            System.Net.Sockets.TcpClient newClient = server.AcceptTcpClient();
+            if (server.Pending())
+            {
+                System.Net.Sockets.TcpClient newClient = server.AcceptTcpClient();
 
-            // once the client is found we create a thread to handle communication
-            Thread newThread = new Thread(new ParameterizedThreadStart(HandleClient));
-            newThread.Start(newClient);
+                // once the client is found we create a thread to handle communication
+                Thread newThread = new Thread(new ParameterizedThreadStart(HandleClient));
+                newThread.Start(newClient);
+            }
+            else
+            {
+                Console.WriteLine("I'm Sleeping!");
+                Thread.Sleep(0);
+            }
         }
     }
 
