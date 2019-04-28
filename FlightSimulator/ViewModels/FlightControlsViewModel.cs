@@ -58,7 +58,6 @@ namespace FlightSimulator.ViewModels
         {
             set
             { 
-                
                 model.Send("set /controls/flight/aileron " + Convert.ToString(value));
             }
         }
