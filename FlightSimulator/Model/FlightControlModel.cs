@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FlightSimulator.Model
 {
-    class FlightControlModel
+   public class FlightControlModel
     {
         
         /// <summary>
@@ -19,11 +19,87 @@ namespace FlightSimulator.Model
                 client.Write(text);
         }
 
-        public void manualPilot(){
+        private double rudder = 0;
+        public double Rudder
+        {
+            set
+            {
+                rudder = value;
+                if (!FlightBoardModel.Is_connect)
+                {
+                    return;
+                }
+                TCPClient client = TCPClient.Instance;
+                string command = "set controls/flight/rudder " + rudder + "\r\n";
+                client.Write(command);
+            }
+            get
+            { return rudder; }
+        }
+        private double throttle = 0;
 
-           }
+        public double Throttle
+        {
+            set
+            {
+                throttle = value;
+                if (!FlightBoardModel.Is_connect)
+                {
+                    return;
+                }
+                TCPClient client = TCPClient.Instance;
+                string command = "set controls/engines/current-engine/throttle " + rudder + "\r\n";
+                client.Write(command);
+            }
+            get
+            {
+                return throttle;
 
+            }
+        }
 
+        private double aileron = 0;
 
+        public double Aileron
+        {
+            set
+            {
+                aileron = value;
+                if (!FlightBoardModel.Is_connect)
+                {
+                    return;
+                }
+                TCPClient client = TCPClient.Instance;
+                string command = "set controls/flight/aileron " + rudder + "\r\n";
+                client.Write(command);
+            }
+            get
+            {
+                return aileron;
+            }
+        }
+
+        private double elevator = 0;
+
+        public double Elevator
+        {
+            set
+            {
+                elevator = value;
+                if (!FlightBoardModel.Is_connect)
+                {
+                    return;
+                }
+                TCPClient client = TCPClient.Instance;
+                string command = "set controls/flight/elevator " + rudder + "\r\n";
+                client.Write(command);
+            }
+            get
+            {
+                return elevator;
+            }
+        }
     }
+
+
 }

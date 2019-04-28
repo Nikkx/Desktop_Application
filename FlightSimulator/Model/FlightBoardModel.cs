@@ -49,6 +49,8 @@ namespace FlightSimulator.ViewModels
             }
         }
 
+
+
         //this is used to determine if we are already connected or not
         static private bool is_connect = false;
         static public bool Is_connect
