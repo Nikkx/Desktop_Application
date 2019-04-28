@@ -67,6 +67,7 @@ namespace FlightSimulator.ViewModels
          */
          private TCPServer server;
          public void Connect(){
+            
             is_connect = true;
             server = new TCPServer();
             TCPClient client = new TCPClient();
