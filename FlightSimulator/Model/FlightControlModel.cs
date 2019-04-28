@@ -17,12 +17,21 @@ namespace FlightSimulator.Model
         /// <param name="text"></param>
         public void autoPilot(string text)
         {
-            //parse line by line
-            //string[] lines = text.Split(Environment.NewLine);
-
-
+            //splits the text into strings for each individual line
+            string[] lines = text.Split("\n\r".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+            foreach (string line in lines){
             TCPClient client = TCPClient.Instance;
-            client.Write(text);
+            client.Write(line);
+                }
+        }
+
+        /*
+         * Receives a command (as a string) and sends the command
+         * to the active TCPClient (to be sent onwwards to the simulator)
+         */
+        public void Send(string command){
+        TCPClient client = TCPClient.Instance;
+            client.Write(command);
         }
 
 
