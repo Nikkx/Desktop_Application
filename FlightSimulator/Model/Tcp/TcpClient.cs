@@ -32,16 +32,13 @@ namespace FlightSimulator.Model
 
         public TCPClient()
         {
-            System.Diagnostics.Debug.WriteLine("Client");
             client = new TcpClient();
             ep = new IPEndPoint(IPAddress.Parse(ApplicationSettingsModel.Instance.FlightServerIP), ApplicationSettingsModel.Instance.FlightCommandPort);
             try
             {
                     while (!client.Connected)
                     {
-                        System.Diagnostics.Debug.WriteLine("Waiting for Client");
                         client.Connect(ep);
-                    System.Diagnostics.Debug.WriteLine("We have a client!");
                     }
                     writer=new BinaryWriter(client.GetStream());
                 }

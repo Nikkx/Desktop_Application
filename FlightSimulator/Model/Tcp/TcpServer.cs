@@ -76,7 +76,6 @@ public class TCPServer
      */
     public void HandleClient(object obj)
     {
-        System.Diagnostics.Debug.WriteLine("Server");
         // retrieve client from parameter passed to thread
         System.Net.Sockets.TcpClient client = (System.Net.Sockets.TcpClient)obj;
 
