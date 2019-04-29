@@ -39,11 +39,13 @@ namespace FlightSimulator.Model
          * This will create the new "Client" and "Server" threads
          */
         private TCPServer server;
+        private TCPClient client;
         public void Connect()
         {
             is_connect = true;
-            TCPClient client = new TCPClient();
-            //server = new TCPServer();
+            //TCPClient client = new TCPClient();
+            //server = new TCPServer();      
+            client=TCPClient.Instance; 
             server = TCPServer.Instance;
         }
 
