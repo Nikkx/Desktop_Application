@@ -53,7 +53,7 @@ namespace FlightSimulator.ViewModels
         #endregion AutoPilotProperties
 
         #region ManualProperties
-
+        TCPClient client;
         public double Aileron//this works. the property changes when joystick moves.
         {
             set

@@ -44,8 +44,9 @@ namespace FlightSimulator.Model
         {
             is_connect = true;
             //TCPClient client = new TCPClient();
-            //server = new TCPServer();      
-            client=TCPClient.Instance; 
+            //server = new TCPServer();
+            client=TCPClient.Instance;
+            client.TCPConnect();
             server = TCPServer.Instance;
         }
 

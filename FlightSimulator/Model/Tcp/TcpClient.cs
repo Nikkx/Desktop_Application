@@ -11,6 +11,8 @@ namespace FlightSimulator.Model
 {
     class TCPClient
     {
+        private bool connectYet=false;
+        
         #region Singleton
         private static TCPClient m_Instance = null;
         public static TCPClient Instance
@@ -26,23 +28,37 @@ namespace FlightSimulator.Model
         }
         #endregion
         public TcpClient client;
-       // private ApplicationSettingsModel app;
         private IPEndPoint ep;
         public BinaryWriter writer;
+        //private IPEndPoint ep;
 
         public TCPClient()
         {
             client = new TcpClient();
             ep = new IPEndPoint(IPAddress.Parse(ApplicationSettingsModel.Instance.FlightServerIP), ApplicationSettingsModel.Instance.FlightCommandPort);
-            try
+
+        }
+
+        //This function is called whenever we need to connect to the simulator
+        //Note: It WILL continuesly throw "NULL Socket Exceptions" until it finds a Server (this will not stop the code running)
+        public void TCPConnect(){
+                        new Task(() =>
             {
+                try
+                {
                     while (!client.Connected)
                     {
-                        client.Connect(ep);
+                        try{
+                                client.Connect(ep);
+                            }
+                        catch(Exception e){
+                             continue;
+                            }
                     }
                     writer=new BinaryWriter(client.GetStream());
                 }
                 catch (Exception e) { }
+            }).Start();
         }
 
         public void Write(string command)

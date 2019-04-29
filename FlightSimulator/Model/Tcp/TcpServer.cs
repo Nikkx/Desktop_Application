@@ -33,8 +33,6 @@ public class TCPServer
 
     public TCPServer()
     {
-        System.Diagnostics.Debug.WriteLine("TCP");
-
         ApplicationSettingsModel currentSettings = new ApplicationSettingsModel();
         IPAddress currentIP = IPAddress.Parse(currentSettings.FlightServerIP);
         int port = System.Convert.ToInt32(currentSettings.FlightInfoPort);
@@ -42,28 +40,23 @@ public class TCPServer
         server.Start();
         isRunning = true;
 
-        System.Diagnostics.Debug.WriteLine("Loop");
         LoopClients();
     }
 
     public void LoopClients()
     {
-        System.Diagnostics.Debug.WriteLine("Pre-Task");
         new Task(() =>
         {
             while (isRunning)
             {
-                System.Diagnostics.Debug.WriteLine("running");
                 //we wait for client connection
                 System.Net.Sockets.TcpClient newClient = server.AcceptTcpClient();
-                System.Diagnostics.Debug.WriteLine("We Passed!");
                 // once the client is found we create a thread to handle communication
                 Thread newThread = new Thread(new ParameterizedThreadStart(HandleClient));
                 newThread.Start(newClient);
 
             }
         }).Start();
-        System.Diagnostics.Debug.WriteLine("Post-Task");
     }
     //Keep the current PLane location-this will always be updated to the PLane's
     //current location
