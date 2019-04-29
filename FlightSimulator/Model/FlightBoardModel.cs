@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlightSimulator.Model;
-
+using System.ComponentModel;
 
 namespace FlightSimulator.ViewModels
 {
-    public class FlightBoardModel : BaseNotify
+    public class FlightBoardModel :BaseNotify
     {
         #region Singleton
         private static FlightBoardModel oneInstance = null;
@@ -27,6 +27,12 @@ namespace FlightSimulator.ViewModels
         #endregion
 
         //private TCPServer server;
+
+        //public event PropertyChangedEventHandler PropertyChanged;
+
+        //public delegate void PropertyChangedHandler(string propname,double val);
+        //public event PropertyChangedHandler PropertyChanged;
+
         private double lon;
         public double Lon
         {
@@ -35,10 +41,12 @@ namespace FlightSimulator.ViewModels
             {
                 lon = value;
                 NotifyPropertyChanged("Lon");
+                //PropertyChanged("Lon",value);
             }
         }
 
         private double lat;
+
         public double Lat
         {
             get { return lat; }
@@ -46,6 +54,7 @@ namespace FlightSimulator.ViewModels
             {
                 lat = value;//until here all good
                 NotifyPropertyChanged("Lat");
+                //PropertyChanged("Lat",value);
             }
         }
 

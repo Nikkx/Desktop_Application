@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Reflection;
+using System.ComponentModel;
 
 namespace FlightSimulator.ViewModels
 {
@@ -18,6 +20,25 @@ namespace FlightSimulator.ViewModels
         public FlightBoardViewModel(FlightBoardModel model)
         {
             this.model = model;
+            this.model.PropertyChanged += PropChanged;
+            /*model.PropertyChanged += (string propName,double val) =>
+            {
+                PropertyInfo propertyInfo = this.GetType().GetProperty(propName);
+                propertyInfo.SetValue(this, val);
+            };
+            model.PropertyChanged += (string propName, double val) =>
+            {
+                Console.WriteLine(propName);
+            };*/
+        }
+
+        private void PropChanged(object sender, PropertyChangedEventArgs e)
+        {
+            PropertyInfo propertyInfo = this.GetType().GetProperty(e.PropertyName);
+            if(e.PropertyName.Equals("Lon"))
+                propertyInfo.SetValue(this,model.Lon);
+            if(e.PropertyName.Equals("Lat"))
+                propertyInfo.SetValue(this, model.Lat);
         }
 
         private double lon;

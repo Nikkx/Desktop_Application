@@ -37,6 +37,7 @@ public class TCPServer
 
     public TCPServer()
     {
+        //System.Diagnostics.Debug.WriteLine("TCP");
         ApplicationSettingsModel currentSettings = new ApplicationSettingsModel();
         IPAddress currentIP = IPAddress.Parse(currentSettings.FlightServerIP);
         int port = System.Convert.ToInt32(currentSettings.FlightInfoPort);
