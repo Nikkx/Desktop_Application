@@ -245,3 +245,274 @@ Author: nikol kat <nikolk2@gmail.com>
 Date:   Tue Apr 16 12:55:47 2019 +0300
 
     Add .gitignore and .gitattributes.
+commit 97c990bc10f490b8af170dacb65df86d481f370e
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 23:35:46 2019 +0200
+
+    fixed bugs
+
+commit 50fc6836db6c20f7339b560514301e19ba249e07
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 22:44:28 2019 +0200
+
+    next update
+
+commit ee8d3b8a0edd17af0f2407c8ca52ddabd20fa091
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 22:36:08 2019 +0200
+
+    AutoPilot AND Joystick Work!
+
+commit e2f414c75ad6b52bd1e1d1cc784eb85c484540f7
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 21:14:24 2019 +0200
+
+    add the git log
+
+commit b2935ca5d91c5bdb4730a6fac956011fb024678a
+Merge: ffef394 e49130f
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sun Apr 28 21:00:51 2019 +0300
+
+    Merge branch 'master' of https://github.com/Nikkx/Desktop_Application
+
+commit e49130f93eb836c9b03cc42038430871e6673aab
+Merge: e85d851 687159e
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 20:47:38 2019 +0200
+
+    dfgdfgdfg
+
+commit e85d851d516528af28a90e1ea2daa79c8975577d
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 20:45:58 2019 +0200
+
+    fsdfds
+
+commit e1d6344e71433702794a6d976a52c67459b3458a
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 20:14:56 2019 +0200
+
+    Tcp Server updated
+
+commit ffef3946407e9726baefe7fb4714dc29615a5f81
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sun Apr 28 20:57:53 2019 +0300
+
+    vm property changed
+
+commit 4089256b867585ef15e2fcfc0aa6a16de16f7a7e
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 19:48:35 2019 +0200
+
+    Created the singletonfunction
+
+commit 687159e1ac04b73eaaf46fca43ac9988e13e6467
+Merge: 2ad043a e1d6344
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sun Apr 28 20:46:10 2019 +0300
+
+    gfbngfhbd
+
+commit 2ad043a649715bf5ed52ba330f69b4702e0f73b4
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sun Apr 28 20:44:31 2019 +0300
+
+    done stuff
+
+commit 886ba5e2a9541f28462311f38645820cfd7bf686
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 18:59:32 2019 +0200
+
+    After creating Send function
+
+commit 4883d3794b54500ecd608d4eadbf5b95546aa0aa
+Merge: f6d7a3b 474b115
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 18:37:09 2019 +0200
+
+    It works!
+
+commit f6d7a3b9ec9c609163fa26c95b1f178b9f47f5ed
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 18:36:16 2019 +0200
+
+    The server AND client works!
+
+commit 474b11552cd8260c2e8fb12370088c77a4963b81
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sun Apr 28 18:35:03 2019 +0300
+
+    normalized joystick values
+
+commit 398506dd96407fa197a22d14076c66f152d60a25
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sun Apr 28 17:49:24 2019 +0300
+
+    joystick values normalized
+
+commit 220ae4e4389ae9712ec8122160d2ce2aa4adc99d
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sun Apr 28 16:49:58 2019 +0300
+
+    binding connect
+
+commit eca2711b891ec6737d4073d89c820db003f9eb3c
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 16:39:37 2019 +0200
+
+    Fixed all Errors
+
+commit 29e72c55136c02eafac5ba819138e10229797b99
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 16:36:15 2019 +0200
+
+    Fixed Final Error
+
+commit e23327c0b78a322f8caf092f547a7a8b1d15b50e
+Merge: eef2ebb 9d1005d
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sun Apr 28 16:20:01 2019 +0300
+
+    fixed errors
+
+commit 9d1005d816e03cb5c5e62fd582f458e68b2dc900
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 16:09:47 2019 +0200
+
+    Moved Manuel Control into FlightControlModel
+
+commit eef2ebbcaf2e17b2819d63fb3924078cf79ddcc5
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sun Apr 28 16:17:37 2019 +0300
+
+    fixed errors, made lon and lat properties
+
+commit f18bbfde9a9dea60761a673424b3c95805cae331
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sun Apr 28 15:55:01 2019 +0300
+
+    fixed some issues
+
+commit 93702b4a458bdd9654ea55d3640413370bc17098
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 14:05:15 2019 +0200
+
+    28.04 Still Have a few errors but almost done
+
+commit 52b721f3eb9ea735648f079bab8dc275bac075a6
+Author: uschwell <schwelluri@gmail.com>
+Date:   Sun Apr 28 02:39:26 2019 +0200
+
+    28/04
+    Made the FlightBoardViewModel contain the location (with getters and setters), the Server now writes all corrections to that location (which then informs model about location having changed)
+
+commit 5bd953c25b71e925a641e076ebe8114b4781a974
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sat Apr 27 22:06:16 2019 +0300
+
+    added autoPilot in viewModel
+
+commit 3adbed28641ed1debbc579c2a3c16498996c26a5
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sat Apr 27 20:53:33 2019 +0300
+
+    added FligtControlModel class,
+    joystick values are now updated in code and view.
+
+commit 0b27eb717e4dd1181bbeeb2b865270fa197ec617
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sat Apr 27 17:52:11 2019 +0300
+
+    Elevator and Aileron values change according to joystick movement. (in GUI only, not yet in the code)
+
+commit 6cd3aa27f89ac1382b4ba91bb9fc407fac3fcc8b
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sat Apr 27 17:22:32 2019 +0300
+
+    AutoPilot clear button now works correctly
+
+commit a23ef1fcb1fa965f04988a49f62e32488ed22781
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Sat Apr 27 13:06:06 2019 +0300
+
+    fixed FlightBoardModel, FlightBoardViewModel
+    slight change to tcpServer - it should know the model, NOT viewModel.
+    added alieron,throttle etc values to view.
+
+commit f5b987bde92d9a01e2ae7dd6868ca585624ceebb
+Author: uschwell <schwelluri@gmail.com>
+Date:   Thu Apr 25 17:50:13 2019 +0200
+
+    Uri25/04
+
+commit e64368f26fc32798ea8baafee72bdc7e9c2fe02f
+Merge: 563da00 655793b
+Author: uschwell <schwelluri@gmail.com>
+Date:   Wed Apr 24 22:30:38 2019 +0200
+
+    Merge branch 'master' of https://github.com/Nikkx/Desktop_Application
+
+commit 563da00da8c23a08289d1f2c1f946593507a3cee
+Author: uschwell <schwelluri@gmail.com>
+Date:   Wed Apr 24 22:30:08 2019 +0200
+
+    Commit 24/04 22:30
+
+commit 9c9c5e782f3c067b662a5d07bda6455b76e5b0a3
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Wed Apr 24 19:12:25 2019 +0300
+
+    Finished View,ViewModel for Settings window :)
+
+commit 655793b54f1256a117aa58656abdd380958463ea
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Wed Apr 24 19:12:25 2019 +0300
+
+    Finished View,ViewModel for Settings window :)
+
+commit 543127b7a3db085fa620fb7d2c56b9a121730c5c
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Wed Apr 24 17:25:53 2019 +0300
+
+    Added settings window
+    Added ViewModel for FlightControl and Joystick
+    textBox in auto pilot now changes color
+
+commit 66559e46c6a9020a96beeb0f1198419ff74a0065
+Merge: d5c89ec 67c40e2
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Wed Apr 24 12:25:03 2019 +0300
+
+    Merge branch 'master' of https://github.com/Nikkx/Desktop_Application
+
+commit d5c89ec5488fc17e3d29d33d6cfb3aff68870887
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Wed Apr 24 12:24:42 2019 +0300
+
+    finished the VIEW for main window, flight controls(manual and auto) and flight board.
+    settings window NOT done yet.
+
+commit c8ef68f79aa419400c7b2032644b1c38c2b162c1
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Tue Apr 23 18:42:01 2019 +0300
+
+    small changes
+
+commit 67c40e2a7eb5b4dbd1c0ae1a3031f346ed1baf45
+Author: uschwell <schwelluri@gmail.com>
+Date:   Fri Apr 19 00:59:05 2019 +0200
+
+    These are the basic Server classes: more will be added soon (these are so basic (and working) that they are worth comiiting)
+
+commit b60cd5b55585b0c897fad4c731f03d2e63dd8ab3
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Tue Apr 16 12:55:51 2019 +0300
+
+    Add project files.
+
+commit 721d3c928f12489b29738772a25ba05c240b98cd
+Author: nikol kat <nikolk2@gmail.com>
+Date:   Tue Apr 16 12:55:47 2019 +0300
+
+    Add .gitignore and .gitattributes.
